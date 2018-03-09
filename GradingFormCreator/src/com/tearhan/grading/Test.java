@@ -7,15 +7,29 @@ import java.io.IOException;
 public class Test {
 
 	public static void main(String[] args) {
-		Creator iCreator = new Creator(16, 1, 1, 2);
+		Creator iCreator = null;
+		if (args.length == 0) {
+			iCreator = new Creator();
+		} else if (args.length == 1) {
+			iCreator = new Creator(Integer.parseInt(args[0]));
+		} else if (args.length == 2) {
+			iCreator = new Creator(Integer.parseInt(args[0]),
+					Integer.parseInt(args[1]));
+		} else if (args.length == 3) {
+			iCreator = new Creator(Integer.parseInt(args[0]),
+					Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+		} else if (args.length == 4) {
+			iCreator = new Creator(Integer.parseInt(args[0]),
+					Integer.parseInt(args[1]), Integer.parseInt(args[2]),
+					Integer.parseInt(args[3]));
+		}
+
 		String form = iCreator.getGradingForm();
-		// System.out.println(form);
 
 		File iFile = new File("./½ø½×±í.txt");
 		if (iFile.exists()) {
 			iFile.delete();
 
-			System.out.println(iFile.getAbsolutePath().toString() + "ÒÑÉ¾³ý");
 		} else {
 			try {
 				iFile.createNewFile();

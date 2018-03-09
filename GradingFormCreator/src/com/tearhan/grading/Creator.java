@@ -53,6 +53,19 @@ public class Creator {
 		this.dGrade = dGrade;
 		this.beginNum = beginNum;
 	}
+	/**
+	 * 
+	 * @param dGrade 级别数
+	 * @param beginNum 开始数目
+	 * @param plusVar 增加数量
+	 */
+
+	public Creator(int dGrade, int beginNum, int plusVar) {
+		super();
+		this.dGrade = dGrade;
+		this.beginNum = beginNum;
+		this.plusVar = plusVar;
+	}
 
 	/**
 	 * 全参构造
